@@ -1,11 +1,16 @@
-# .github/workflows/main.yml
-name: Main Pipeline
-on: [push]
+name: Demo Workflow
+
+on:
+  push:
 
 jobs:
-  call-build:
-    uses: driveops-surya/common-workflow/.github/workflows/reusable-build.yml@main
-    with:
-      node-version: '16'
-    secrets:
-      npm_token: ${{ secrets.NPM_TOKEN }}
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run custom hello action
+        uses: ./.github/actions/hello-action
+        with:
+          name: "Surya"
