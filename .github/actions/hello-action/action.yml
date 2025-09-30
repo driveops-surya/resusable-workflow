@@ -9,5 +9,8 @@ inputs:
     default: "World"
 
 runs:
-  using: "node16"
-  main: "index.js"
+  using: "composite"
+  steps:
+    - name: Say hello
+      shell: bash
+      run: echo "👋 Hello, ${{ inputs.name }}! This is your custom composite action running!"
