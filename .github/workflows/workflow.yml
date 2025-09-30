@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   call-build:
-    uses: driveops-surya/common-workflow/.github/workflows/reusable-build.yml
+    uses: driveops-surya/common-workflow/.github/workflows/reusable-build.yml@main
     with:
       node-version: '16'
     secrets:
